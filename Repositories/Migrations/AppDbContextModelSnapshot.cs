@@ -30,6 +30,9 @@ namespace Repositories.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<string>("GitUrl")
                         .HasColumnType("text");
 

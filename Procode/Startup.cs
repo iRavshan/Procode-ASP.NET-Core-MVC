@@ -1,3 +1,4 @@
+using Contracts;
 using Entities.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -56,6 +57,8 @@ namespace Procode
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
 
             services.AddControllersWithViews();
         }

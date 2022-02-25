@@ -1,0 +1,49 @@
+﻿@model Content
+@{
+    ViewData["Title"] = "Videolar";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+<div class="row mt-3">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Yangi kontent qo'shish</div>
+                <hr>
+                <form asp-controller="dashboard" asp-action="content" method="post">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" type="text" class="form-control" id="input-1" placeholder="Kontent mavzusini kiriting">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Author"></label>
+                        <input asp-for="Author" type="text" class="form-control" id="input-2" placeholder="Kontent muallifini kiriting">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShortDescription"></label>
+                        <input asp-for="ShortDescription" type="text" class="form-control" id="input-3" placeholder="Qisqacha tafsilot">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LongDescription"></label>
+                        <input asp-for="LongDescription" type="text" class="form-control" id="input-4" placeholder="Batafsil tafsilot">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ThumbnailUrl"></label>
+                        <input asp-for="ThumbnailUrl" type="text" class="form-control" id="input-5">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GitUrl"></label>
+                        <input asp-for="GitUrl" type="text" class="form-control" id="input-5" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="YoutubeUrl"></label>
+                        <input asp-for="YoutubeUrl" type="text" class="form-control" id="input-5" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-light px-5">Yaratish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
