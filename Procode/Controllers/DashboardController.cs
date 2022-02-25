@@ -34,7 +34,7 @@ namespace Procode.Controllers
             {
                 Content econtent = new Content
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     Name = content.Name,
                     Author = content.Author,
                     LongDescription = content.LongDescription,
@@ -44,9 +44,11 @@ namespace Procode.Controllers
                     CreatedTime = DateTime.Now
                 };
 
-                var result = repoManager.Contents.Create(econtent);
+                repoManager.Contents.Create(econtent);
 
-                return View("~/Views/Home/Blog");
+                repoManager.CompleteAsync();
+
+                return View("~/Views/Home/Index.cshtml");
             }
 
             return View();

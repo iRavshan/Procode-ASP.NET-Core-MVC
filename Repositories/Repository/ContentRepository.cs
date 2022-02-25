@@ -73,5 +73,20 @@ namespace Repositories.Repository
             }
         }
 
+        public override async Task<bool> Create(Content entity)
+        {
+            try
+            {
+                await dbSet.AddAsync(entity);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "{Repo} Create function error", typeof(ContentRepository));
+                return false;
+            }
+        }
+
     }
 }

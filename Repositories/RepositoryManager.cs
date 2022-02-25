@@ -15,19 +15,21 @@ namespace Repositories
 
         private readonly ILogger logger;
 
-        public RepositoryManager(AppDbContext dbContext, ILoggerFactory logger)
-        {
-            this.dbContext = dbContext;
-            this.logger = logger.CreateLogger("logs");
-
-            Users = new UserRepository(dbContext, this.logger);
-            Contents = new ContentRepository(dbContext, this.logger);
-
-        }
-
         public IUserRepository Users { get; private set; }
 
         public IContentRepository Contents { get; private set; }
+
+        public RepositoryManager(AppDbContext dbContext, ILoggerFactory logger)
+        {
+            this.dbContext = dbContext;
+
+            this.logger = logger.CreateLogger("logs");
+
+            Users = new UserRepository(dbContext, this.logger);
+
+            Contents = new ContentRepository(dbContext, this.logger);
+
+        }
 
         public async Task CompleteAsync()
         {
