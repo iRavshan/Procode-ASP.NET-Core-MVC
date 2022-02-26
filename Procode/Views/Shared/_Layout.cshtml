@@ -42,23 +42,27 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
         <a class="navbar-brand logo-text page-scroll" href="index.html">Procode</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-awesome fas fa-bars"></span>
             <span class="navbar-toggler-awesome fas fa-times"></span>
         </button>
+        <!-- end of mobile menu toggle button -->
+
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="account" asp-action="login">KIRISH <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="login.html">KIRISH</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="home" asp-action="blog">BLOG</a>
+                    <a class="nav-link" asp-controller="home" asp-action="blog">Blog</a>
                 </li>
 
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="index.html#date" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DATE</a>
+                    <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">BO'LIMLAR</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE DETAILS</span></a>
                         <div class="dropdown-divider"></div>
@@ -67,11 +71,15 @@
                         <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
                     </div>
                 </li>
-                <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#contact">CONTACT</a>
+                    <a class="nav-link" asp-controller="home" asp-action="contact">ALOQA</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html">QIDIRISH</a>
+                </li>
+
+
             </ul>
             <span class="nav-item social-icons">
                 <span class="fa-stack">
@@ -91,95 +99,77 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-    <!-- Header -->
-    <header id="header" class="ex-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="white">@ViewData["PageTitle"]</h1>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of ex-header -->
-    <!-- end of header -->
-
     @RenderBody()
 
     <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-col first">
-                        <h5>About Corso</h5>
-                        <p class="p-small">We're passionate about teaching people how to do better SEO for their online presence</p>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-3">
-                    <div class="footer-col second">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-3">
-                    <div class="footer-col third">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-3">
-                    <div class="footer-col fourth">
-                        <h5>Social Media</h5>
-                        <p class="p-small">For news & updates follow us</p>
-                        <a href="#your-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-pinterest-p"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#your-link">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> 
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="footer-col first">
+                    <h5>Biz haqimizda</h5>
+                    <p class="p-small">Platformamiz IT sohasida faoliyat yuritayotgan birodarlarimiz uchun o'z sohasining professionallaridan online darslarni ulashib boradi</p>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col second">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled li-space-lg p-small">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col third">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled li-space-lg p-small">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col fourth">
+                    <h5>Ijtimoiy tarmoqlar</h5>
+                    <p class="p-small">Bizni kuzatib boring</p>
+                    <a href="#your-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#your-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#your-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#your-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> 
 
     <div class="copyright">
         <div class="container">

@@ -11,7 +11,7 @@ namespace Repositories
 {
     public class AppDbContext : IdentityDbContext
     {
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
@@ -21,6 +21,6 @@ namespace Repositories
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Content> Contents { get; set; }
+        public virtual DbSet<Content> Contents { get; set; }
     }
 }

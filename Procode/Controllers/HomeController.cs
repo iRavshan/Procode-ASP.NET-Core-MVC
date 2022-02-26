@@ -24,7 +24,6 @@ namespace Procode.Controllers
             _logger = logger;
 
             this.repoManager = repoManager;
-            this.webHost = webHost;
         }
 
         public IActionResult Index()

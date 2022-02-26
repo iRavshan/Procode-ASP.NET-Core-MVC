@@ -4,7 +4,15 @@
     ViewData["PageTitle"] = "Foydali " + Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<header id="header" class="ex-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="white">@ViewData["PageTitle"]</h1>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="page-wraper">
     <div class="page-content bg-white">
         <div class="content-block">

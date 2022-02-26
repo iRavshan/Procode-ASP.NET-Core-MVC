@@ -16,13 +16,10 @@ namespace Procode.Controllers
 
         private readonly IRepositoryManager repoManager;
 
-        private readonly IWebHostEnvironment webHost;
-
-        public DashboardController(ILogger<DashboardController> logger, IRepositoryManager repoManager, IWebHostEnvironment webHost)
+        public DashboardController(ILogger<DashboardController> logger, IRepositoryManager repoManager)
         {
             this.logger = logger;
             this.repoManager = repoManager;
-            this.webHost = webHost;
         }
 
         [HttpGet]
@@ -30,6 +27,7 @@ namespace Procode.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public IActionResult Content(Content content)
