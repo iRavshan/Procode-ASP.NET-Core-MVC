@@ -1,7 +1,9 @@
 ﻿using Contracts;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Procode.ViewModels.Home;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +16,7 @@ namespace Procode.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
         private readonly IRepositoryManager repoManager;
 
         public HomeController(ILogger<HomeController> logger, IRepositoryManager repoManager)
@@ -21,6 +24,7 @@ namespace Procode.Controllers
             _logger = logger;
 
             this.repoManager = repoManager;
+            this.webHost = webHost;
         }
 
         public IActionResult Index()
@@ -28,11 +32,12 @@ namespace Procode.Controllers
             return View();
         }
 
-        public IActionResult Blog()
+        public async Task<IActionResult> Blog()
         {
             HomeBlogViewModel model = new HomeBlogViewModel()
             {
-                Title = "Blog"
+                Title = "Blog",
+                Contents = await repoManager.Contents.GetAll()
             };
 
             return View(model);

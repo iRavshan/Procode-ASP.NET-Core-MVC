@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,10 +16,13 @@ namespace Procode.Controllers
 
         private readonly IRepositoryManager repoManager;
 
-        public DashboardController(ILogger<DashboardController> logger, IRepositoryManager repoManager)
+        private readonly IWebHostEnvironment webHost;
+
+        public DashboardController(ILogger<DashboardController> logger, IRepositoryManager repoManager, IWebHostEnvironment webHost)
         {
             this.logger = logger;
             this.repoManager = repoManager;
+            this.webHost = webHost;
         }
 
         [HttpGet]
@@ -32,22 +36,10 @@ namespace Procode.Controllers
         {
             if (ModelState.IsValid)
             {
-                Content econtent = new Content
-                {
-                    Id = Guid.NewGuid(),
-                    Name = content.Name,
-                    Author = content.Author,
-                    LongDescription = content.LongDescription,
-                    ShortDescription = content.ShortDescription,
-                    GitUrl = content.GitUrl,
-                    YoutubeUrl = content.YoutubeUrl,
-                    CreatedTime = DateTime.Now
-                };
-
-                repoManager.Contents.Create(econtent);
-
+                repoManager.Contents.Create(content);
+                
                 repoManager.CompleteAsync();
-
+                
                 return View("~/Views/Home/Index.cshtml");
             }
 

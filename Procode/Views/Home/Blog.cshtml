@@ -13,27 +13,35 @@
                     <div class="row">
                         <!-- Left part start -->
                         <div class="col-lg-8">
-                            <div class="blog-post blog-md clearfix">
-                                <div class="ttr-post-media">
-                                    <a href="#"><img src="/assets/img/blog/grid/pic1.jpg" alt=""></a>
-                                </div>
-                                <div class="ttr-post-info">
-                                    <h5 class="post-title"><a href="blog-details.html">This Story Behind Education Will Haunt You Forever.</a></h5>
-                                    <p>Knowing that, you’ve optimised your pages countless amount of times, written tons.</p>
-                                    <ul class="media-post">
-                                        <li>#JavaScript</li>
-                                        <li>#Jwt</li>
-                                    </ul>
-                                    <ul class="media-post">
-                                        <li><i class="fa fa-user"></i></li>
-                                        <li>Said Abdulwahed</li>
-                                    </ul>
-                                    <div class="post-extra">
-                                        <a href="#" class="btn-link">Batafsil <i class="fas fa-long-arrow-alt-right"></i> </a>
+                            @{
+                                foreach (var item in Model.Contents)
+                                {
+                                    <div class="blog-post blog-md clearfix">
+                                        <div class="ttr-post-media">
+                                            <a href="#"><img src="/assets/img/Computer-Programmer.jpg" alt="" style="width: 350px; height: 250px"></a>
+                                        </div>
+                                        <div class="ttr-post-info">
+                                            <h5 class="post-title"><a href="blog-details.html">@item.Name</a></h5>
+                                            <p>@item.ShortDescription</p>
+                                            <ul class="media-post">
+                                                <li>#JavaScript</li>
+                                                <li>#Jwt</li>
+                                                <li>@item.CreatedTime.ToString("dd-ddd yyyy")</li>
+                                            </ul>
+                                            <ul class="media-post">
+                                                <li><i class="fa fa-user"></i></li>
+                                                <li>@item.Author</li>
+                                            </ul>
+                                            <div class="post-extra">
+                                                <a asp-controller="home" asp-action="" class="btn-link">Batafsil <i class="fas fa-long-arrow-alt-right"></i> </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <button class="btn-solid-reg mt-5 mb-3">Ko'proq</button>
+                                }
+
+                            }
+
+                            <button class="btn-solid-reg mt-5 mb-4">Ko'proq</button>
                         </div>
                         <!-- Left part END -->
                         <!-- Side bar start -->
