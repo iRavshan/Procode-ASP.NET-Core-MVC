@@ -1222,12 +1222,16 @@ input[type='checkbox'] {
 }
 
 .cards .fas,
-.cards .far {
+.cards .far{
 	color: #0ec9ac;
 	font-size: 3rem;
 	line-height: 6rem;
 }
-
+.fa-themeco:before {
+	font-size: 3rem;
+	color: #0ec9ac;
+	line-height: 6rem;
+}
 .cards .card-body {
 	padding: 0;
 }

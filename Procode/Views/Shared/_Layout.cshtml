@@ -15,7 +15,6 @@
     <title>@ViewData["Title"] - Procode.uz</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
     <link href="/styles/css/bootstrap.css" rel="stylesheet">
-    <link href="/styles/css/fontawesome-all.css" rel="stylesheet">
     <link href="/styles/css/swiper.css" rel="stylesheet">
     <link href="/styles/css/magnific-popup.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/css/fonts.css">
@@ -96,13 +95,11 @@
                 </span>
             </span>
         </div>
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-
+    </nav> 
+    
     @RenderBody()
 
-    <!-- Footer -->
-<div class="footer">
+    <div class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -110,45 +107,53 @@
                     <h5>Biz haqimizda</h5>
                     <p class="p-small">Platformamiz IT sohasida faoliyat yuritayotgan birodarlarimiz uchun o'z sohasining professionallaridan online darslarni ulashib boradi</p>
                 </div>
-            </div> <!-- end of col -->
+            </div>
             <div class="col-md-3">
                 <div class="footer-col second">
-                    <h5>Links</h5>
+                    <h5>Sahifalar</h5>
                     <ul class="list-unstyled li-space-lg p-small">
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                            <div class="media-body"><a asp-controller="home" asp-action="index">Bosh sahifa</a></div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                            <div class="media-body"><a asp-controller="home" asp-action="blog">Blog</a></div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                            <div class="media-body"><a asp-controller="home" asp-action="contact">Aloqa</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a asp-controller="home" asp-action="team">Bizning jamoa</a></div>
                         </li>
                     </ul>
                 </div>
-            </div> <!-- end of col -->
+            </div>
             <div class="col-md-3">
                 <div class="footer-col third">
-                    <h5>Links</h5>
+                    <h5>Kategoriyalar</h5>
                     <ul class="list-unstyled li-space-lg p-small">
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                            <div class="media-body"><a>.NET</a></div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                            <div class="media-body"><a>NodeJs</a></div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                            <div class="media-body"><a>Laravel</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a>React & Vue</a></div>
                         </li>
                     </ul>
                 </div>
-            </div> <!-- end of col -->
+            </div>
             <div class="col-md-3">
                 <div class="footer-col fourth">
                     <h5>Ijtimoiy tarmoqlar</h5>
@@ -165,22 +170,27 @@
                     <a href="#your-link">
                         <i class="fab fa-youtube"></i>
                     </a>
+                    <a href="#your-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#your-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
+            </div>
+        </div> 
+    </div>
 </div> 
 
     <div class="copyright">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright &copy; 2020 <a href="https://procode.uz">Procode</a> - Barcha huquqlar himoyalangan</p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
+                    <p class="p-small">Copyright &copy; 2019 - @DateTime.Now.Year <a href="https://procode.uz">Procode</a> - Barcha huquqlar himoyalangan</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- end of copyright -->
 
 
     @RenderSection("scripts", required: false)

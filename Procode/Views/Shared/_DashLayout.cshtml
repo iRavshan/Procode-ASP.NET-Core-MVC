@@ -9,6 +9,11 @@
     <title>@ViewData["Title"] - Boshqaruv paneli</title>
     <link href="/dashassets/css/pace.min.css" rel="stylesheet" />
     <script src="/dashassets/js/pace.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
@@ -23,60 +28,52 @@
 
 <body class="bg-theme bg-theme1">
     <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner"><div class="loader"></div></div></div></div>
-    <!-- Start wrapper-->
     <div id="wrapper">
-
-        <!--Start sidebar-wrapper-->
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="brand-logo">
                 <a href="index.html">
-                    <img src="dashassets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-                    <h5 class="logo-text">Dashtreme Admin</h5>
+                    <h5 class="logo-text">Procode.uz</h5>
                 </a>
             </div>
             <ul class="sidebar-menu do-nicescrol">
-                <li class="sidebar-header">MAIN NAVIGATION</li>
+                <li class="sidebar-header">Navigatsiya</li>
                 <li>
-                    <a href="index.html">
-                        <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                    <a asp-controller="dashboard" asp-action="index">
+                        <i class="fas fa-tachometer-alt"></i> <span>Boshqaruv paneli</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="icons.html">
-                        <i class="zmdi zmdi-invert-colors"></i> <span>UI Icons</span>
+                    <a asp-controller="dashboard" asp-action="content">
+                        <i class="fas fa-plus"></i><span>Kontent qo'shish</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="forms.html">
-                        <i class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
+                    <a asp-controller="dashboard" asp-action="EditContent">
+                        <i class="fas fa-pen"></i> <span>Kontentlarni tahrirlash</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="tables.html">
-                        <i class="zmdi zmdi-grid"></i> <span>Tables</span>
+                    <a asp-controller="dashboard" asp-action="AllContents">
+                        <i class="fas fa-file-code"></i> <span>Barcha kontentlar</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="calendar.html">
-                        <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
-                        <small class="badge float-right badge-light">New</small>
+                    <a asp-controller="dashboard" asp-action="AddSpeaker">
+                        <i class="fas fa-user-plus"></i> <span>Yangi Spiker</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="profile.html">
-                        <i class="zmdi zmdi-face"></i> <span>Profile</span>
+                    <a asp-controller="dashboard" asp-action="EditSpeaker">
+                        <i class="fas fa-quote-left"></i> <span>Iqtiboslarni tahrirlash</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="dashboard" asp-action="AllSpeakers">
+                        <i class="fas fa-users"></i> <span>Barcha Spikerlar</span>
                     </a>
                 </li>
             </ul>
-
         </div>
-        <!--End sidebar-wrapper-->
-        <!--Start topbar header-->
         <header class="topbar-nav">
             <nav class="navbar navbar-expand fixed-top">
                 <ul class="navbar-nav mr-auto align-items-center">
@@ -128,7 +125,6 @@
                 </ul>
             </nav>
         </header>
-        <!--End topbar header-->
         <div class="clearfix"></div>
 
         <div class="content-wrapper">
@@ -148,6 +144,7 @@
                 </div>
             </div>
         </footer>
+
         <div class="right-sidebar">
             <div class="switcher-icon">
                 <i class="zmdi zmdi-settings zmdi-hc-spin"></i>

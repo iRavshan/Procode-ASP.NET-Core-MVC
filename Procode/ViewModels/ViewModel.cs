@@ -8,5 +8,7 @@ namespace Procode.ViewModels
     public class ViewModel
     {
         public string Title { get; set; }
+
+        public string BannerTitle { get; set; }
     }
 }

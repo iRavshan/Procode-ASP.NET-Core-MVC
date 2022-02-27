@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -135,7 +136,7 @@
                 <!-- Card -->
                 <div class="card ftco-animate fadeInUp ftco-animated">
                     <div class="card-image">
-                        <i class="fas fa-atom"></i>
+                        <i class="fab fa-themeco"></i>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Professional ta'lim</h4>
@@ -146,7 +147,7 @@
                 <!-- Card -->
                 <div class="card">
                     <div class="card-image">
-                        <i class="fad fa-signal-stream"></i>
+                        <i class="fas fa-microphone-alt"></i>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Jonli muloqotlar</h4>
@@ -168,7 +169,7 @@
                 <!-- Card -->
                 <div class="card">
                     <div class="card-image">
-                        <i class="fas fa-link"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Keng qamrov</h4>
@@ -179,7 +180,7 @@
                 <!-- Card -->
                 <div class="card">
                     <div class="card-image">
-                        <i class="far fa-handshake"></i>
+                        <i class="fas fa-code"></i>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Bepul xizmat</h4>
@@ -190,7 +191,7 @@
                 <!-- Card -->
                 <div class="card">
                     <div class="card-image">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="far fa-handshake"></i>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Qo'llab - quvvatlash</h4>
@@ -323,36 +324,13 @@
                                     <div class="testimonial-text">Awesome course for the money. I never thought I could learn so much about search engine optimization in such a short amount of time. Highly recommend.</div>
                                     <div class="testimonial-author">Roy Smith - Developer</div>
                                 </div> <!-- end of text-wrapper -->
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="image-wrapper">
-                                    <img class="img-fluid" src="/assets/img/testimonial-3.jpg" alt="alternative">
-                                </div> <!-- end of image-wrapper -->
-                                <div class="text-wrapper">
-                                    <div class="testimonial-text">Corso is the best SEO training course in the market. It teaches you all the basics but it also adds value with some advanced tips & tricks the are great.</div>
-                                    <div class="testimonial-author">Martin Singer - Online Marketer</div>
-                                </div> <!-- end of text-wrapper -->
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="image-wrapper">
-                                    <img class="img-fluid" src="/assets/img/testimonial-4.jpg" alt="alternative">
-                                </div> <!-- end of image-wrapper -->
-                                <div class="text-wrapper">
-                                    <div class="testimonial-text">Learning SEO can actually be fun. I attended Corso SEO training and I had a great time with my peer students and the instructors. Highly recommended course.</div>
-                                    <div class="testimonial-author">Ronda Louis - Business Owner</div>
-                                </div> <!-- end of text-wrapper -->
-                            </div> <!-- end of swiper-slide -->
+                            </div>
                             <!-- end of slide -->
 
-                        </div> <!-- end of swiper-wrapper -->
-                        <!-- Add Arrows -->
+                        </div>
+
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-                        <!-- end of add arrows -->
 
                     </div> <!-- end of swiper-container -->
                 </div> <!-- end of slider-container -->
@@ -363,23 +341,25 @@
     </div> <!-- end of container -->
 </div> <!-- end of slider-2 -->
 <!-- end of testimonials -->
+
+
 <!-- Date -->
 <div id="date" class="basic-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-container">
-                    <h2 class="thumbnail_title">
-                        JavaScript asoslari<h2>
-                            <p class="thumbnail_author">Jahongir Odilov</p>
-                            <p class="thumbnail_date">22 - Dekabr 20:00</p>
-                            <a class="btn-solid-lg page-scroll" href="#register">Eslatma belgilash <i class="fas fa-bell ml-2" aria-hidden="true"></i> </a>
+                    <h2 class="thumbnail_title"> JavaScript asoslari</h2>
+                    <p class="thumbnail_author">Jahongir Odilov</p>
+                    <p class="thumbnail_date">22 - Dekabr 20:00</p>
+                    <a class="btn-solid-lg page-scroll" href="#register">Eslatma belgilash <i class="fas fa-bell ml-2" aria-hidden="true"></i> </a>
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
 </div> <!-- end of basic-5 -->
 <!-- end of date -->
+
 <!-- Newsletter -->
 <div class="form-2">
     <div class="container">

@@ -28,7 +28,12 @@ namespace Procode.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeIndexViewModel model = new HomeIndexViewModel()
+            {
+                Title = "Bosh sahifa"
+            };
+
+            return View(model);
         }
 
         public async Task<IActionResult> Blog()
@@ -36,7 +41,8 @@ namespace Procode.Controllers
             HomeBlogViewModel model = new HomeBlogViewModel()
             {
                 Title = "Blog",
-                Contents = await repoManager.Contents.GetAll()
+                BannerTitle = "Foydali Blog",
+                Contents = await repoManager.Contents.GetAll(),
             };
 
             return View(model);
