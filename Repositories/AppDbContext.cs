@@ -23,5 +23,7 @@ namespace Repositories
 
         public virtual DbSet<Content> Contents { get; set; }
         public virtual DbSet<Speaker> Speakers { get; set; }
+
+        //public virtual DbSet<Thumbnail> Thumbnail { get; set; }
     }
 }

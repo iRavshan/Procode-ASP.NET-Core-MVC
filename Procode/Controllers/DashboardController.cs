@@ -43,5 +43,10 @@ namespace Procode.Controllers
 
             return View();
         }
+
+        public IActionResult AllContents()
+        {
+            return View();
+        }
     }
 }

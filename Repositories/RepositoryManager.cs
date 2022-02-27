@@ -19,6 +19,8 @@ namespace Repositories
 
         public IContentRepository Contents { get; private set; }
 
+        public ISpeakerRepository Speakers { get; private set; }
+
         public RepositoryManager(AppDbContext dbContext, ILoggerFactory logger)
         {
             this.dbContext = dbContext;
@@ -28,6 +30,8 @@ namespace Repositories
             Users = new UserRepository(dbContext, this.logger);
 
             Contents = new ContentRepository(dbContext, this.logger);
+
+            Speakers = new SpeakerRepository(dbContext, this.logger);
 
         }
 
