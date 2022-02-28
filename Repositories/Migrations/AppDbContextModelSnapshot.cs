@@ -75,6 +75,10 @@ namespace Repositories.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("PhotoFilePath")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Quote")
                         .IsRequired()
                         .HasColumnType("text");

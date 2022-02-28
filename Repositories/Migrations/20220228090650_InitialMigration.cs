@@ -74,7 +74,8 @@ namespace Repositories.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Surname = table.Column<string>(type: "text", nullable: false),
                     Job = table.Column<string>(type: "text", nullable: false),
-                    Quote = table.Column<string>(type: "text", nullable: false)
+                    Quote = table.Column<string>(type: "text", nullable: false),
+                    PhotoFilePath = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -10,6 +10,8 @@ namespace Contracts
     {
         IUserRepository Users { get; }
         IContentRepository Contents { get; }
+
+        ISpeakerRepository Speakers { get; }
         Task CompleteAsync();
     }
 }

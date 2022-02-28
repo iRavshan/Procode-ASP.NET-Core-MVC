@@ -303,29 +303,21 @@
                 <div class="slider-container">
                     <div class="swiper-container text-slider">
                         <div class="swiper-wrapper">
+                            @{
+                                foreach (var item in Model.Speakers)
+                                {
+                                    <div class="swiper-slide">
+                                        <div class="image-wrapper">
+                                            <img class="img-fluid" src="@string.Concat("/assets/img/speaker/", item.PhotoFilePath)" alt="alternative" style="width: 96px; height: 96px;">
+                                        </div> <!-- end of image-wrapper -->
+                                        <div class="text-wrapper">
+                                            <div class="testimonial-text">@item.Quote</div>
+                                            <div class="testimonial-author">@String.Format("{0} {1} - {2}", item.Name, item.Surname, item.Job)</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
 
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="image-wrapper">
-                                    <img class="img-fluid" src="/assets/img/testimonial-1.jpg" alt="alternative">
-                                </div> <!-- end of image-wrapper -->
-                                <div class="text-wrapper">
-                                    <div class="testimonial-text">I took the SEO training course about a year ago and I am very happy. It taught me all the basics of search engine optimization and some tricks.</div>
-                                    <div class="testimonial-author">Jude Thorn - Online Marketer</div>
-                                </div> <!-- end of text-wrapper -->
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="image-wrapper">
-                                    <img class="img-fluid" src="/assets/img/testimonial-2.jpg" alt="alternative">
-                                </div> <!-- end of image-wrapper -->
-                                <div class="text-wrapper">
-                                    <div class="testimonial-text">Awesome course for the money. I never thought I could learn so much about search engine optimization in such a short amount of time. Highly recommend.</div>
-                                    <div class="testimonial-author">Roy Smith - Developer</div>
-                                </div> <!-- end of text-wrapper -->
-                            </div>
-                            <!-- end of slide -->
 
                         </div>
 

@@ -27,11 +27,12 @@ namespace Procode.Controllers
             this.repoManager = repoManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             HomeIndexViewModel model = new HomeIndexViewModel()
             {
-                Title = "Bosh sahifa"
+                Title = "Bosh sahifa",
+                Speakers = Enumerable.Reverse(await repoManager.Speakers.GetAll())
             };
 
             return View(model);
