@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using Entities.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -30,7 +31,8 @@ namespace Procode.Controllers
         {
             HomeIndexViewModel model = new HomeIndexViewModel()
             {
-                Title = "Bosh sahifa"
+                Title = "Bosh sahifa",
+                Thumbnail = 
             };
 
             return View(model);
@@ -42,7 +44,7 @@ namespace Procode.Controllers
             {
                 Title = "Blog",
                 BannerTitle = "Foydali Blog",
-                Contents = await repoManager.Contents.GetAll(),
+                Contents =  Enumerable.Reverse(await repoManager.Contents.GetAll())
             };
 
             return View(model);
