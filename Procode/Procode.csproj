@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\Dashboard\" />
-  </ItemGroup>
-
 </Project>

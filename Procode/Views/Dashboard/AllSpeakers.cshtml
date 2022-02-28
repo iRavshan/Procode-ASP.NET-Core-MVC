@@ -1,5 +1,6 @@
-﻿@{
-
+﻿@model DashboardAllSpeakersViewModel
+@{
+    int numerator = 0;
     Layout = "~/Views/Shared/_DashLayout.cshtml";
 }
 
@@ -13,18 +14,23 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Ismi</th>
+                                <th scope="col">Familiyasi</th>
+                                <th scope="col">Tahrirlash</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="col">1</th>
-                                <th scope="col">Adams</th>
-                                <th scope="col">Nicola</th>
-                                <th scope="col"><a href="#"><i class="fas fa-code"></i></a></th>
-                            </tr>
+                            @{
+                                foreach (var item in Model.Speakers)
+                                {
+                                    <tr>
+                                        <th scope="col">@numerator</th>
+                                        <th scope="col">@item.Name</th>
+                                        <th scope="col">@item.Surname</th>
+                                        <th scope="col"><a asp-controller="dashboard" asp-action="editspeaker" asp-route-id="@item.Id"><i class="fas fa-pen"></i></a></th>
+                                    </tr>
+                                };
+                            }
                         </tbody>
                     </table>
                 </div>

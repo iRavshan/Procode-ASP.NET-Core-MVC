@@ -31,8 +31,7 @@ namespace Procode.Controllers
         {
             HomeIndexViewModel model = new HomeIndexViewModel()
             {
-                Title = "Bosh sahifa",
-                Thumbnail = 
+                Title = "Bosh sahifa"
             };
 
             return View(model);

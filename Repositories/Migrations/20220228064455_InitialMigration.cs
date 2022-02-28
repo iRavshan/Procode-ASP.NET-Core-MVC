@@ -58,11 +58,27 @@ namespace Repositories.Migrations
                     LongDescription = table.Column<string>(type: "text", nullable: false),
                     ThumbnailUrl = table.Column<string>(type: "text", nullable: false),
                     GitUrl = table.Column<string>(type: "text", nullable: true),
-                    YoutubeUrl = table.Column<string>(type: "text", nullable: true)
+                    YoutubeUrl = table.Column<string>(type: "text", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contents", x => x.ContentId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Speakers",
+                columns: table => new
+                {
+                    SpeakerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Surname = table.Column<string>(type: "text", nullable: false),
+                    Job = table.Column<string>(type: "text", nullable: false),
+                    Quote = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Speakers", x => x.SpeakerId);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +244,9 @@ namespace Repositories.Migrations
 
             migrationBuilder.DropTable(
                 name: "Contents");
+
+            migrationBuilder.DropTable(
+                name: "Speakers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
