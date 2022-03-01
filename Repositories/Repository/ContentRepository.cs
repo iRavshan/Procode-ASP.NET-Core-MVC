@@ -36,12 +36,13 @@ namespace Repositories.Repository
                 if (existingUser == null)
                     return await Create(entity);
 
-                existingUser.Author = entity.Author;
                 existingUser.GitUrl = entity.GitUrl;
                 existingUser.LongDescription = entity.LongDescription;
                 existingUser.ShortDescription = entity.ShortDescription;
-                existingUser.ThumbnailUrl = entity.ThumbnailUrl;
+                existingUser.AuthorName = entity.AuthorName;
+                existingUser.AuthorSurname = entity.AuthorSurname;
                 existingUser.Name = entity.Name;
+                existingUser.ThumbnailPhotoFilePath = entity.ThumbnailPhotoFilePath;
                 existingUser.YoutubeUrl = entity.YoutubeUrl;
 
                 return true;

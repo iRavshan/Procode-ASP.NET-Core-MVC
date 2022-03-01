@@ -38,7 +38,7 @@
                                             </ul>
                                             <ul class="media-post">
                                                 <li><i class="fa fa-user"></i></li>
-                                                <li>@item.Author</li>
+                                                <li>@($"{item.AuthorName[0]}. {item.AuthorSurname}")</li>
                                             </ul>
                                             <div class="post-extra">
                                                 <a asp-controller="home" asp-action="" class="btn-link">Batafsil <i class="fas fa-long-arrow-alt-right"></i> </a>

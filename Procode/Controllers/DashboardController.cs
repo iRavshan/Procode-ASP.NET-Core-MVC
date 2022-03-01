@@ -128,11 +128,6 @@ namespace Procode.Controllers
             return View(editModel);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> EditSpeaker(DashboardEditSpeakerViewModel model)
-        {
-            return View();
-        }
 
         [HttpPost]
         public IActionResult EditSpaker(DashboardAddSpeakerViewModel model)
