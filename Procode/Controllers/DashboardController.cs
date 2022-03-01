@@ -25,6 +25,16 @@ namespace Procode.Controllers
             this.webHost = webHost;
         }
 
+        public IActionResult Index()
+        {
+            DashboardIndexViewModel model = new DashboardIndexViewModel
+            {
+
+            };
+
+            return View(model);
+        }
+
         [HttpGet]
         public ViewResult Content()
         {
@@ -84,7 +94,7 @@ namespace Procode.Controllers
 
                 repoManager.Speakers.Create(newSpeaker);
                 repoManager.CompleteAsync();
-                return View("~/Views/Account/Login.cshtml");
+                return View("allspeakers");
             }
 
             return View();
@@ -134,6 +144,5 @@ namespace Procode.Controllers
         {
             return View();
         }
-
     }
 }

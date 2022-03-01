@@ -50,7 +50,7 @@ namespace Repositories.Repository
         {
             try
             {
-                var exist = await dbSet.Where(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+                var exist = await dbSet.FindAsync(id);
 
                 if (exist == null) return false;
 
@@ -79,5 +79,7 @@ namespace Repositories.Repository
                 return false;
             }
         }
+
+        
     }
 }

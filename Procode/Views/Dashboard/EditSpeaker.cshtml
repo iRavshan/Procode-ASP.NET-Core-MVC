@@ -10,6 +10,8 @@
             <div class="card-body">
                 <div class="card-title">Spikerni tahrirlash</div>
                 <hr>
+                <input hidden asp-for="Id" />
+                <input hidden asp-for="ExistingPhotoFilePath" />
                 <form enctype="multipart/form-data" asp-controller="dashboard" asp-action="editspeaker" method="post">
                     <div class="form-group">
                         <label asp-for="Name"></label>

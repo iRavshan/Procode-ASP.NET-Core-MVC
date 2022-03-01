@@ -31,10 +31,10 @@
                                         <th scope="col">@item.Surname</th>
                                         <th scope="col">@string.Concat(item.Quote.Substring(0, 10), " ...")</th>
                                         <th scope="col">
-                                                <a class="btn btn-info mr-1" asp-controller="dashboard" asp-action="editspeaker" asp-route-id="@item.Id"><i class="fas fa-pen"></i></a>
-                                                <form asp-controller="dashboard" asp-action="deletespeaker" asp-route-id="@item.Id" method="post" style="display: inline-block;">
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Rostan ham ushbu malumotni ochirmoqchi ekanligingizni tasdiqlang');"><i class="fas fa-trash"></i></button>
-                                                </form>
+                                            <a class="btn btn-info mr-1" asp-controller="dashboard" asp-action="editspeaker" asp-route-id="@item.Id"><i class="fas fa-pen"></i></a>
+                                            <form asp-controller="dashboard" asp-action="deletespeaker" asp-route-id="@item.Id" method="post" style="display: inline-block;">
+                                               <button type="submit" class="btn btn-danger" onclick="return confirm('Rostan ham ushbu malumotni ochirmoqchi ekanligingizni tasdiqlang');"><i class="fas fa-trash"></i></button>
+                                            </form>
                                         </th>  
                                     </tr>
 
