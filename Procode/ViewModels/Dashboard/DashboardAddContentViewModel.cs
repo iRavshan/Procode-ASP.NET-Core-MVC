@@ -1,16 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Models
+namespace Procode.ViewModels.Dashboard
 {
-    public class Content
+    public class DashboardAddContentViewModel
     {
-        [Column("ContentId")]
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Kontent mavzusini kiriting")]
@@ -43,6 +41,6 @@ namespace Entities.Models
         public DateTime CreatedTime { get; set; }
 
         [Display(Name = "Thumbnail surati")]
-        public string ThumbnailPhotoFilePath { get; set; }
+        public IFormFile ThumbnailPhotoFilePath { get; set; }
     }
 }

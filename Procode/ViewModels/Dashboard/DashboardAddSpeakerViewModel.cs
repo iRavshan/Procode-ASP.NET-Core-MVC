@@ -13,23 +13,24 @@ namespace Procode.ViewModels.Dashboard
         [Column("SpeakerId")]
         public Guid Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Spikerning ismini kiriting")]
         [Display(Name = "Spikerning ismi")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Spikerning familiyasini kiriting")]
         [Display(Name = "Spikerning familiyasi")]
         public string Surname { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ushbu maydonni to'ldiring")]
         [Display(Name = "IT sohasidagi yo'nalishi")]
         public string Job { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ushbu maydonni to'ldiring")]
+        [MinLength(20, ErrorMessage = "Gap eng kamida 20 ta so'zdan iborat bo'lishi kerak")]
         [Display(Name = "Spikerga tegishli motivatsion so'zlar")]
         public string Quote { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Profil suratini tanlang")]
         [Display(Name = "Spikerning surati")]
         public IFormFile Photo { get; set; }
     }

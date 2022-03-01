@@ -101,5 +101,44 @@ namespace Procode.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult DeleteSpeaker(Guid id)
+        {
+            repoManager.Speakers.Delete(id);
+            repoManager.CompleteAsync();
+            return RedirectToAction("allspeakers");
+        }
+
+        [HttpGet]
+        public async Task<ViewResult> EditSpeaker(Guid id)
+        {
+            Speaker speaker = await repoManager.Speakers.GetById(id);
+
+            DashboardEditSpeakerViewModel editModel = new DashboardEditSpeakerViewModel
+            {
+                Id = speaker.Id,
+                Name = speaker.Name,
+                Surname = speaker.Surname,
+                Job = speaker.Job,
+                Quote = speaker.Quote,
+                ExistingPhotoFilePath = speaker.PhotoFilePath
+            };
+
+            return View(editModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditSpeaker(DashboardEditSpeakerViewModel model)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditSpaker(DashboardAddSpeakerViewModel model)
+        {
+            return View();
+        }
+
     }
 }
