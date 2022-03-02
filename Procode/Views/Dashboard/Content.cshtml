@@ -10,34 +10,51 @@
             <div class="card-body">
                 <div class="card-title">Yangi kontent qo'shish</div>
                 <hr>
-                <form asp-controller="dashboard" asp-action="content" method="post">
+                <form enctype="multipart/form-data" asp-controller="dashboard" asp-action="content" method="post">
                     <div class="form-group">
                         <label asp-for="Name"></label>
-                        <input asp-for="Name" type="text" class="form-control" id="input-1" placeholder="Kontent mavzusini kiriting">
+                        <input asp-for="Name" type="text" class="form-control mb-1" id="input-1">
+                        <span asp-validation-for="Name" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="AuthorName"></label>
-                        <input asp-for="AuthorName" type="text" class="form-control" id="input-2" placeholder="Kontent muallifini kiriting">
+                        <input asp-for="AuthorName" type="text" class="form-control mb-1" id="input-2">
+                        <span asp-validation-for="AuthorName" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="AuthorSurname"></label>
-                        <input asp-for="AuthorSurname" type="text" class="form-control" id="input-2" placeholder="Kontent muallifini kiriting">
+                        <input asp-for="AuthorSurname" type="text" class="form-control mb-1" id="input-3">
+                        <span asp-validation-for="AuthorSurname" class="AspValidationError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CreatedTime"></label>
+                        <input asp-for="CreatedTime" type="datetime" class="form-control mb-1" id="input-3">
+                        <span asp-validation-for="CreatedTime" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ShortDescription"></label>
-                        <input asp-for="ShortDescription" type="text" class="form-control" id="input-3" placeholder="Qisqacha tafsilot">
+                        <input asp-for="ShortDescription" type="text" class="form-control mb-1" id="input-4">
+                        <span asp-validation-for="ShortDescription" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="LongDescription"></label>
-                        <input asp-for="LongDescription" type="text" class="form-control" id="input-4" placeholder="Batafsil tafsilot">
+                        <input asp-for="LongDescription" type="text" class="form-control mb-1" id="input-4">
+                        <span asp-validation-for="LongDescription" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="GitUrl"></label>
-                        <input asp-for="GitUrl" type="text" class="form-control" id="input-6" />
+                        <input asp-for="GitUrl" type="text" class="form-control mb-1" id="input-4">
+                        <span asp-validation-for="GitUrl" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="YoutubeUrl"></label>
-                        <input asp-for="YoutubeUrl" type="text" class="form-control" id="input-7" />
+                        <input asp-for="YoutubeUrl" type="text" class="form-control mb-1" id="input-4">
+                        <span asp-validation-for="YoutubeUrl" class="AspValidationError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ThumbnailPhotoFilePath"></label>
+                        <input type="file" class="form-control mb-1" asp-for="ThumbnailPhotoFilePath" />
+                        <span asp-validation-for="ThumbnailPhotoFilePath" class="AspValidationError"></span>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-light px-5">Yaratish</button>

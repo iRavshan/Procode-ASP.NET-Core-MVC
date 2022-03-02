@@ -51,11 +51,9 @@ namespace Repositories.Repository
             try
             {
                 var exist = await dbSet.FindAsync(id);
-
                 if (exist == null) return false;
-
                 dbSet.Remove(exist);
-
+                await dbContext.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)

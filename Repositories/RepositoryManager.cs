@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class RepositoryManager : IRepositoryManager
+    public class RepositoryManager : IRepositoryManager, IDisposable
     {
         private readonly AppDbContext dbContext;
 
@@ -40,5 +40,9 @@ namespace Repositories
             await dbContext.SaveChangesAsync();
         }
 
+        public async void Dispose()
+        {
+            await dbContext.DisposeAsync();
+        }
     }
 }
